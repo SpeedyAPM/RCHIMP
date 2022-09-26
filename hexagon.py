@@ -1,0 +1,21 @@
+def hexagon(x, y):
+    t.pu()
+    t.goto(x, y)
+    t.pd()
+    print(t.xcor())
+    t.fillcolor("pink")
+    t.begin_fill()
+    for i in range(6):
+        t.fd(50)
+        t.rt(60)
+    t.end_fill()
+    t.pu()
+    t.setx(t.xcor() + 25)
+    t.sety(t.ycor() - 25)
+    t.pd()
+    t.fillcolor("purple")
+    t.begin_fill()
+    for i in range(6):
+        t.fd(50)
+        t.rt(60)
+    t.end_fill()
