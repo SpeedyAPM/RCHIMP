@@ -4,7 +4,7 @@ import turtle
 # turtle.setundobuffer(15)
 turtle.pensize(3)
 turtle.speed(1000)
-t = turtle.Screen()
+s = turtle.Screen()
 
 def change_position(x,y):
     turtle.penup()
@@ -42,4 +42,4 @@ def board(how_many:int, size_x:int, size_y:int):
         change_position(x, y - 25)
         turtle.write(str(i),True, align='center',font=('Arial',30,'normal'))
 
-t.mainloop()
+s.mainloop()
