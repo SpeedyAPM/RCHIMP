@@ -1,8 +1,4 @@
 """
-This is the Template Repl for Python with Turtle.
-
-Python with Turtle lets you make graphics easily in Python.
-
 Check out the official docs here: https://docs.python.org/3/library/turtle.html
 """
 
@@ -15,9 +11,6 @@ s = turtle.Screen()
 t.speed(0)
 t.goto(0, 0)
 s.listen()
-
-
-
 
 def box_draw(pos_x: int, pos_y: int, size: int, digit: int):
     '''Making a box a 'size' value away in all directions starting from (pos_x, pos_y)'''
@@ -79,14 +72,12 @@ for ii in range (0,wymiar1):
         #print(superlista[ii][jj].xpoint , 'Y:' , superlista[ii][jj].ypoint)
     xx1 = -100
 
-
 # Rysowanie
 for ii in range (0,wymiar1):
     for jj in range(0, wymiar2):
         #print(superlista[ii][jj].xpoint , 'Y:' , superlista[ii][jj].ypoint)
         if superlista[ii][jj].visibp == True:
           box_draw(superlista[ii][jj].xpoint, superlista[ii][jj].ypoint , rozmiar, superlista[ii][jj].digit)
-
 
 def fpoint(x, y):
     #t.goto(x, y)
@@ -100,7 +91,5 @@ def fpoint(x, y):
             t.color('white')
             box_draw(superlista[ii][jj].xpoint, superlista[ii][jj].ypoint , rozmiar, superlista[ii][jj].digit)
             t.color('black')
-
-
-
+          
 s.onclick(fpoint, "1")
