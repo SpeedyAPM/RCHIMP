@@ -37,7 +37,7 @@ class meshxy:
     xpoint = int
     ypoint = int
     visibp = bool
-    kliknięty = bool
+    clicked = bool
 
 wymiar1 = 12
 wymiar2 = 12
@@ -64,6 +64,8 @@ for ii in range (0,wymiar1):
         superlista[ii][jj].xpoint = xx1
         superlista[ii][jj].ypoint = yy1
         xx1 = xx1 + 20
+        superlista[ii][jj].clicked = False
+        superlista[ii][jj].visibp = False
         if (randint(1,3)%3) == 0:
           superlista[ii][jj].visibp = True
         #print(superlista[ii][jj].xpoint , 'Y:' , superlista[ii][jj].ypoint)
@@ -86,6 +88,7 @@ def fpoint(x, y):
         xs1 =superlista[ii][jj].xpoint
         ys1 =superlista[ii][jj].ypoint
         if ((x < (xs1 + rozmiar)) and (x > (xs1 - rozmiar) ) and (y < (ys1 + rozmiar)) and (y > (ys1 - rozmiar) )):
+            superlista[ii][jj].clicked = True
             t.color('white')
             box_draw(superlista[ii][jj].xpoint, superlista[ii][jj].ypoint , rozmiar)
             t.color('black')
