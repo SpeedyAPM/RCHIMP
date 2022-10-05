@@ -88,6 +88,7 @@ for ii in range (0,wymiar1):
 #     print(superlista[ii])
 
 xx1 = -270
+xx1start = -270
 yy1 = -200
 rozmiar = 15
 skok = 38
@@ -108,7 +109,7 @@ for ii in range (0,wymiar1):
         #if (randint(1,3)%3) == 0:
          # superlista[ii][jj].visibp = True
         #print(superlista[ii][jj].xpoint , 'Y:' , superlista[ii][jj].ypoint)
-    xx1 = -100
+    xx1 = xx1start
 
 
 
@@ -137,9 +138,9 @@ for digitsall in range (1,how_many_digits +1):
     if (superlista[ii][jj].visibp ==False):
       superlista[ii][jj].visibp = True
       superlista[ii][jj].digit = digitsall
+      break
     if superlista[ii][jj].visibp == True:
-        digitsall -= 1
-        break
+      continue
 
 # Rysowanie
 for ii in range (0,wymiar1):
