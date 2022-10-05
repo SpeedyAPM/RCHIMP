@@ -104,6 +104,7 @@ for ii in range (0,wymiar1):
         #superlista[ii][jj].digit = randint(1,how_many_digits + 1)
         superlista[ii][jj].clicked = False
         superlista[ii][jj].visibp = False
+        superlista[ii][jj].digit = 0
         #if (randint(1,3)%3) == 0:
          # superlista[ii][jj].visibp = True
         #print(superlista[ii][jj].xpoint , 'Y:' , superlista[ii][jj].ypoint)
@@ -128,12 +129,8 @@ def przeszukiwanie(x,y):
           przerysowanie()
           t.color('black')
 
-    
-
-
-
 # Losowanie cyfr
-for digitsall in range (1,how_many_digits +1:
+for digitsall in range (1,how_many_digits +1):
   while True:
     ii = randint(0, wymiar1 -1)
     jj = randint(0, wymiar2 -1)
@@ -141,6 +138,7 @@ for digitsall in range (1,how_many_digits +1:
       superlista[ii][jj].visibp = True
       superlista[ii][jj].digit = digitsall
     if superlista[ii][jj].visibp == True:
+        digitsall -= 1
         break
 
 # Rysowanie
