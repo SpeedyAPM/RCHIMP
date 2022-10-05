@@ -5,9 +5,6 @@ Check out the official docs here: https://docs.python.org/3/library/turtle.html
 from random import randint
 import turtle
 
-
-
-
 t = turtle.Turtle()
 s = turtle.Screen()
 
