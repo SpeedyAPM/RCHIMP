@@ -133,7 +133,7 @@ def przeszukiwanie(x,y):
 
 
 # Losowanie cyfr
-for digitsall in range (1,how_many_digits +1:
+for digitsall in range (1,how_many_digits +1):
   while True:
     ii = randint(0, wymiar1 -1)
     jj = randint(0, wymiar2 -1)
