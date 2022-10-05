@@ -30,6 +30,27 @@ def box_draw(pos_x: int, pos_y: int, size: int, digit: int):
     t.write(str(digit),True, align='center',font=('Arial',18,'normal'))
     t.penup()
 
+def box_erase(pos_x: int, pos_y: int, size: int, digit: int):
+    '''Making a box a 'size' value away in all directions starting from (pos_x, pos_y)'''
+    t.penup()
+    t.goto(pos_x + size,pos_y)
+    t.pendown()
+    t.fillcolor ("white")
+    t.begin_fill()
+    t.goto(pos_x + size,pos_y + size) # 1
+    t.goto(pos_x - size,pos_y + size) # 2
+    t.goto(pos_x - size,pos_y - size) # 3
+    t.goto(pos_x + size,pos_y - size) # 4
+    t.goto(pos_x + size,pos_y)
+    t.end_fill()
+    t.penup()
+    t.goto(pos_x,pos_y)
+    t.pendown()
+    t.penup()
+    t.goto(pos_x,pos_y - 18)
+    t.write(str(digit),True, align='center',font=('Arial',18,'normal'))
+    t.penup()
+
 class meshxy:
     xpoint = int
     ypoint = int
@@ -89,7 +110,35 @@ def fpoint(x, y):
         if ((x < (xs1 + rozmiar)) and (x > (xs1 - rozmiar) ) and (y < (ys1 + rozmiar)) and (y > (ys1 - rozmiar) )):
             superlista[ii][jj].clicked = True
             t.color('white')
-            box_draw(superlista[ii][jj].xpoint, superlista[ii][jj].ypoint , rozmiar, superlista[ii][jj].digit)
+            box_erase(superlista[ii][jj].xpoint, superlista[ii][jj].ypoint , rozmiar, superlista[ii][jj].digit)
             t.color('black')
           
-s.onclick(fpoint, "1")
+s.onclick(fpoint, "1") # lewy przycisk myszki
+s.onclick(fpoint, "3") # prawy przycisk myszki
+
+def screen_clear(x, y):
+    size = 500
+    
+    pos_x = 0
+    pos_y = 0
+    '''Making a box a 'size' value away in all directions starting from (pos_x, pos_y)'''
+    t.penup()
+    t.goto(pos_x + size,pos_y)
+    t.pendown()
+    t.fillcolor ("white")
+    t.begin_fill()
+    t.goto(pos_x + size,pos_y + size) # 1
+    t.goto(pos_x - size,pos_y + size) # 2
+    t.goto(pos_x - size,pos_y - size) # 3
+    t.goto(pos_x + size,pos_y - size) # 4
+    t.goto(pos_x + size,pos_y)
+    t.end_fill()
+    t.penup()
+    t.goto(pos_x,pos_y)
+    t.pendown()
+    t.penup()
+    t.goto(pos_x,pos_y - 18)
+
+    t.penup()
+
+s.onclick(screen_clear, "2") # center(wheel) mouse button
