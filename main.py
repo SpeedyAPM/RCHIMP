@@ -108,7 +108,6 @@ def przeszukiwanie(x,y):
   global how_many_digits
   global xx1
   global yy1
-  global number_tc
   for ii in range (0,wymiar1):    
     for jj in range(0, wymiar2):
       xs1 =superlista[ii][jj].xpoint
