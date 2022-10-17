@@ -115,15 +115,14 @@ def przeszukiwanie(x,y):
       ys1 =superlista[ii][jj].ypoint
       if ((x < (xs1 + rozmiar)) and (x > (xs1 - rozmiar) ) and (y < (ys1 + rozmiar)) and (y > (ys1 - rozmiar) )):
         if (superlista[ii][jj].digit == number_tc and superlista[ii][jj].clicked == False):
-          number_tc += 1
-
-
           superlista[ii][jj].clicked = True
           superlista[ii][jj].visibp == False
           t.color('white')
           box_erase(superlista[ii][jj].xpoint, superlista[ii][jj].ypoint , rozmiar, superlista[ii][jj].digit)
-          przerysowanie()
+          if number_tc == 1:
+            przerysowanie()
           t.color('black')
+          number_tc += 1
           if ((how_many_digits +1) == number_tc) :
             how_many_digits += 1
             xx1 = xx1start
